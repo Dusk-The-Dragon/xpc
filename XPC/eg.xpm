@@ -1,0 +1,21 @@
+func float lerp(float min, float max, float t){
+    return min + t * (max-min);
+}
+static int main(){
+    while(true){
+        float a = xpIn("Enter a number: ");
+        float b = xpIn("Enter another number: ");
+        float t = xpIn("Enter a value between 0 and 1: ");
+        if (t < 0 || t > 1) {
+            print("Error: t must be between 0 and 1.");
+            continue;
+        }
+        float result = lerp(a, b, t);
+        print("a and b interpolated with t = ", t, " is: ", result);
+        string answer = xpIn("Do you want to try again? (y/n): ");
+        if(answer != "y"){
+            break;
+        }
+    }
+    return 0;
+}
