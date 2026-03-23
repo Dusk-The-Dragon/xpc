@@ -1,0 +1,29 @@
+{
+   "name": "xpm-language",
+    "displayName": "X' Language Support",
+    "description": "Syntax highlighting for X'",
+    "version": "0.0.2", 
+    "engines": { "vscode": "^1.80.0" }, 
+    "categories": ["Programming Languages"], 
+    "contributes": {
+     "languages": [ 
+      { 
+        "id": "xpm", 
+        "aliases": ["X'", "xpm"], 
+        "extensions": [".xpm"], 
+        "configuration": "./language-configuration.json", 
+        "icon": { 
+          "light": "./icons/Xpm.svg", 
+          "dark": "./icons/Xpm.svg" 
+        } 
+      } 
+    ], 
+    "grammars": [ 
+      { 
+        "language": "xpm", 
+        "scopeName": "source.xpm", 
+        "path": "./syntaxes/xpm.tmLanguage.json" 
+      } 
+    ]
+  } 
+}

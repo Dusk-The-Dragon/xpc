@@ -1,0 +1,10 @@
+{
+  "name": "XPM Dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "./xpm-vscode"
+      ]
+    }
+  }
+}
