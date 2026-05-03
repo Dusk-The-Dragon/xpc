@@ -1,4 +1,5 @@
 #this is a comment
+/*this is also a comment*/ 
 func float lerp(float min, float max, float t){
     return min + t * (max-min);
 }
