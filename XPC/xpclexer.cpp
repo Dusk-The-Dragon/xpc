@@ -5,6 +5,22 @@
 #include <regex>
 using namespace std;
 
+std::ostream& operator<<(std::ostream& os, const Token& t) {
+	os << "Token(";
+	switch (t.type) {
+		case Identifier: os << "Identifier"; break;
+		case Literal: os << "Literal"; break;
+		case Operator: os << "Operator"; break;
+		case Delimiter: os << "Delimiter"; break;
+		case Type: os << "Type"; break;
+		case Modifier: os << "Modifier"; break;
+		case otherKeyword: os << "otherKeyword"; break;
+		case Semi: os << "Semi"; break;
+		case EndOfFile: os << "EndOfFile"; break;
+	}
+	os << ", \"" << t.val << "\")\n";
+	return os;
+}
 List<Token> Lexer::Lex() {
 	bool ERR = false;
 	std::string code = this->code;

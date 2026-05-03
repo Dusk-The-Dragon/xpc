@@ -1,20 +1,6 @@
 #ifndef XPC_XPCLEXER_H
 #define XPC_XPCLEXER_H
-
-#include <string>
-#include "list.h"
-
-enum TokenType {
-    Identifier,
-    Literal,
-    Operator,
-    Delimiter,
-    Type,
-    Modifier,
-    otherKeyword,
-    Semi,
-    EndOfFile
-};
+#include "global.h"
 
 struct Token {
     TokenType type;
