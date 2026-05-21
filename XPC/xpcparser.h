@@ -15,7 +15,7 @@ struct AtomNode : public ASTNode
 struct ExpressionNode : public ASTNode
 {
     std::string type;
-    std::vector<AtomNode> children;
-    ExpressionNode(std::string t, std::vector<AtomNode> c) : type(t), children(std::move(c)) {}
+    std::vector<ASTNode> children;
+    ExpressionNode(std::string t, std::vector<ASTNode> c) : type(t), children(std::move(c)) {}
 };
 #endif // XPCPARSER_H
