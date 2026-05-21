@@ -18,8 +18,8 @@ enum TokenType {
 
 const double INF = std::numeric_limits<double>::infinity();
 
-std::map<std::string, std::pair<double, double>> opPrecidence = {
-    {"!", {INF, INF}},
+inline std::map<std::string, std::pair<double, double>> opPrecidence = {
+    {"!", {-INF, INF}},
     {"rt", {1.0, 1.1}},
     {"^", {1.0, 1.0}},
     {"*", {2.0, 2.0}},
@@ -35,6 +35,6 @@ std::map<std::string, std::pair<double, double>> opPrecidence = {
     {"!=", {5.0, 5.0}},
     {"&&", {6.0, 6.0}},
     {"||", {7.0, 7.0}}
-}
+};
 
 #endif // GLOBAL_H

@@ -25,15 +25,17 @@ List<Token> Lexer::Lex() {
 	bool ERR = false;
 	std::string code = this->code;
 	List<Token> tokens;
+	int pos = 0;
+	int col = 0;
+	int line = 0;
 	auto newToken = [&](TokenType type, std::string val) {
 		Token token;
 		token.type = type;
 		token.val = val;
+		token.line = line;
+		token.col = col;
 		tokens.push_back(token);
 	};
-	int pos = 0;
-	int col = 0;
-	int line = 0;
 	List<std::string> types = {
 		"dynam",
 		"int",
@@ -77,6 +79,12 @@ List<Token> Lexer::Lex() {
 			bool found = false;
 			for (auto& opp : opps) {
 				if(code.substr(pos, opp.length()) == opp) {
+					if (opPrecidence[opp].first == -INF) {
+						newToken(Literal, "");
+					} else if(opPrecidence[opp].second == -INF) {
+						newToken(Literal, "");
+					}
+					newToken(Operator, opp);
 					newToken(Operator, std::string(opp));
 					pos += opp.length();
 					col += opp.length();
@@ -126,6 +134,12 @@ List<Token> Lexer::Lex() {
 			pos++;
 			col++;
 			newToken(Semi, string(1,c));
+			continue;
+		}
+		if(c == '\''){
+			newToken(Literal, code.substr(pos, 3));
+			pos += 3;
+			col += 3;
 			continue;
 		}
 		std::cout << "Unidentified Token \"" << c << "\"! line " << line << ", col " << col << "\n";
