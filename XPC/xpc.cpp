@@ -1,9 +1,10 @@
 #include <iostream>
 #include "xpclexer.h"
 #include <iostream>
-int main() {
+int main()
+{
     // we'll parse a fixed expression and show the AST
-    std::string sourceCode = "2 rt (a ^ 2 + b ^ 2)";
+    std::string sourceCode = "(a ^ 2 + b ^ 2) ^ 0.5";
 
     // Lex the string
     Lexer myLexer{sourceCode};
@@ -13,7 +14,6 @@ int main() {
     {
         std::cout << t;
     }
-    
 
     return 0;
 }

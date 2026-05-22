@@ -2,15 +2,17 @@
 #define XPC_XPCLEXER_H
 #include "global.h"
 
-struct Token {
+struct Token
+{
     TokenType type;
     std::string val;
     int line;
     int col;
-    friend std::ostream& operator<<(std::ostream& os, const Token& t);
+    friend std::ostream &operator<<(std::ostream &os, const Token &t);
 };
 
-struct Lexer {
+struct Lexer
+{
     std::string code;
     List<Token> Lex();
 };

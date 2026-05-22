@@ -1,0 +1,16 @@
+./
+../
+.devconatiner/
+directories
+eg.xpm
+eg.xpm.cpp
+global.h
+list.cpp
+list.h
+main.sh
+xpc.cpp
+xpclexer.cpp
+xpclexer.h
+xpcparser.cpp
+xpcparser.h
+xpm-vscode/
