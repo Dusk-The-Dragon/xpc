@@ -94,6 +94,7 @@ List<Token> Lexer::Lex()
 				line++;
 			}
 			pos++;
+			col++;
 			continue;
 		}
 		{
